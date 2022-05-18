@@ -1,0 +1,53 @@
+<nav class="navbar navbar-color">
+  <div class="container">
+    <a class="navbar-brand">
+      <img src="assets/logo.png" alt="Logo" width="180" height="80">
+    </a>
+  </div>
+</nav>
+<div class="container">
+  <div class="d-flex justify-content-center align-items-center formulario">
+    <div class="col col-lg-3">
+      <form>
+        <div class="mb-1">
+          <label for="peso1" class="form-label">Peso</label>
+          <input type="text" class="form-control" id="peso1" aria-describedby="pesoHelp" name="peso" [(ngModel)]="cotizacion.peso" placeholder="Ingrese el peso de su paquete">
+        </div>
+        <div class="mb-1">
+          <label for="alto1" class="form-label">Alto</label>
+          <input type="text" class="form-control" id="alto1" aria-describedby="altoHelp" name="alto" [(ngModel)]="cotizacion.alto" placeholder="Ingrese la altura de su paquete">
+        </div>
+        <div class="mb-1">
+          <label for="largo1" class="form-label">Largo</label>
+          <input type="text" class="form-control" id="largo1" aria-describedby="largoHelp" name="largo" [(ngModel)]="cotizacion.largo" placeholder="Ingrese el largo de su paquete">
+        </div>
+        <div class="mb-1">
+          <label for="ancho1" class="form-label">Ancho</label>
+          <input type="text" class="form-control" id="ancho1" aria-describedby="anchoHelp" name="ancho" [(ngModel)]="cotizacion.ancho" placeholder="Ingrese el ancho de su paquete">
+        </div>
+        <div class="mb-1">
+          <label for="paisOrigen1" class="form-label">País de Origen</label>
+          <input type="text" class="form-control" id="paisOrigen1" aria-describedby="paisOrigenHelp" name="pais_origen" [(ngModel)]="cotizacion.pais_origen" placeholder="Ingrese el país de origen">
+        </div>
+        <div class="mb-1">
+          <label for="paisDestino1" class="form-label">País de Destino</label>
+          <select class="form-select mb-3" aria-label="Default select example" name="paisDestino" [(ngModel)]="cotizacion.pais_destino">
+            <option *ngFor="let pais of getPaises" [value]="pais.id">{{pais.nombre}}</option>
+          </select>
+        </div>
+        <div class="mb-1">
+          <label for="rol1" class="form-label">Rol</label>
+          <select class="form-select mb-3" aria-label="Default select example" name="rol" [(ngModel)]="cotizacion.rol">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-outline-primary" (click)="cotizar()"><i class="bi bi-plus-square"></i>  Cotizar</button>
+      </form>
+    </div>
+  </div>
+</div>
